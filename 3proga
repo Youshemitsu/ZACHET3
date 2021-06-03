@@ -1,0 +1,18 @@
+#include <iostream>
+int main() {
+    const int n = 3, m = 3;
+    int mtrx[n][m];
+    int d = 0;
+
+    std::cout << "Enter matrix: \n";
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < m; j++)
+            std::cin >> mtrx[i][j];
+
+    d = mtrx[0][0] * mtrx[1][1] * mtrx[2][2] + mtrx[0][1] * mtrx[1][2] * mtrx[2][0]
+        + mtrx[1][0] * mtrx[2][1] * mtrx[0][2] - mtrx[2][0] * mtrx[1][1] * mtrx[0][2] -
+        mtrx[2][1] * mtrx[1][2] * mtrx[0][0] - mtrx[1][0] * mtrx[0][1] * mtrx[2][2];
+
+    std::cout << "determinant = " << d;
+    return 0;
+}
